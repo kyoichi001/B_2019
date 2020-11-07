@@ -13,12 +13,6 @@ public class UIFileBrowse : MonoBehaviour
 
     public void OnPushBrowseButton()
     {
-        // フィルタを設定します
-        FileBrowser.SetFilters
-        (
-            false,
-            new FileBrowser.Filter("Videos", ".mp4", ".avi")
-        );
         // フォルダ選択ダイアログを表示します
         FileBrowser.ShowLoadDialog
         (

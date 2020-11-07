@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
@@ -42,6 +40,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         var obj = Instantiate(appUICharactorPrefab, contentParent);
         obj.GetComponent<AppUI>().SetTarget(target);
 
+    }
+
+    public void AddSprite()
+    {
+        SpriteGenerator.Instance.Generate();
     }
 
     public void AddCharactor()

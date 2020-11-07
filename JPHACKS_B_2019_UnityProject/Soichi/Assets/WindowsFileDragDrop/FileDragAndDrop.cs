@@ -29,7 +29,6 @@ public class FileDragAndDrop : SingletonMonoBehaviour<FileDragAndDrop>
         foreach(var extention in extentions)
         {
             m_OnDropFiles.Add(extention, func);
-        log.Add(extention);
         }
     }
 
@@ -50,19 +49,7 @@ public class FileDragAndDrop : SingletonMonoBehaviour<FileDragAndDrop>
         string str = "Dropped " + aFiles.Count + " files at: " + aPos + "\n\t" +
             aFiles.Aggregate((a, b) => a + "\n\t" + b);
         Debug.Log(str);
-        log.Add(str);
-
-
-
     }
 
-    List<string> log = new List<string>();
-    private void OnGUI()
-    {
-        if (GUILayout.Button("clear log"))
-            log.Clear();
-        foreach (var s in log)
-            GUILayout.Label(s);
-    }
 }
 
